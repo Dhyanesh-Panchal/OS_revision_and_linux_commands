@@ -14,11 +14,14 @@ dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~/Desktop$ free -h
     Swap:         2.0Gi          0B       2.0Gi
 ```
 
+### total = used + free + buff/cache
+### available (approx) = free + (reclaimable) buff/cache
+
 ## Output Fields Explained
 - **free**: Memory that is completely unallocated
 - **shared**: Memory that is used by multiple processes (shared libraries, shared memory segments)
 - **buf/cache**: 
-  - Buffer: Used as temporary storage of data before writing to disk
+  - Buffer: Memory used by kernel buffers & Used as temporary storage of data before writing to disk
   - Cache: The page cache
 - **available**: More accurate estimate of free RAM, as it accounts for buffer as well: *free + reclaimable(cache/buffer)*
 
