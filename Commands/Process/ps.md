@@ -212,7 +212,7 @@ Use `ps [options] --sort [+|-]key[,]` to sort results:
 - `awk` can also be used to search based on pattern.
 
 
-## Other Commands built over `ps`
+## Other Commands related to process
 
 #### `pstree`-Displays processes in a hierarchical tree format.
 ![pstree](../../Images/pstree.png)
