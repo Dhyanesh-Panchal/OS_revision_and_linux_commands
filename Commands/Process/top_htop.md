@@ -55,7 +55,13 @@ Type 'q' or <Esc> to continue
 - Causes includes:
   - The parent process does not call `wait()` or `waitpid()` to read the child’s exit status. So the main cause is the parent not properly handling the `SIGCHLD` signal or not calling wait()/waitpid().
   - The parent is stuck in an infinite loop, handling other tasks, or crashes before reading the child’s status.
+- To detect Zombie processes: `ps aux | awk '$8 ~ /Z/ {print}'`
 
+#### How to deal with zombie processes
+- **Option 1**: Find and Restart the Parent Process
+  - `ps -eo pid,ppid,stat,cmd | awk '$3 ~ /Z/ {print}'` this will get the zombie processes. restart the parent *ppid*.
+  - and restart the process: `sudo kill -1 <ppid>`
+- **Option 2**: Check the status of the parent, if it is not suspended(stopped), then kill the parent process.
 ### Orphaned Processes
 - If the parent dies before the child, the child becomes an orphan and is adopted by the `init` process (PID 1).
 - The `init` process automatically reaps orphans, so zombies are temporary here.
