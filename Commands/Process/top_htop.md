@@ -104,6 +104,8 @@ Type 'q' or <Esc> to continue
 - **TIME+**: Total CPU time consumed by the process
 - **COMMAND**: Command or name of the process
 
+- Use `-d` to change update frequency, default-3 sec.
+
 ## htop Command
 ![htop](../../Images/htop.png)
 

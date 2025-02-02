@@ -96,3 +96,27 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
 - `vmstat -d`: Displays stats about disk I/O for each block
 - Alternatives: `dstat`, `iostat`, `netstat`
 - Example: `dstat -tcmn` shows timestamped, CPU, memory, and network data
+
+
+## Value thresholds
+
+| **Column**   | **Meaning** | **Usual Insight Range** | **Scenarios and Insights** |
+|-------------|------------|-----------------|----------------------|
+| **procs (r)** | Number of processes waiting for CPU | Normally `0-2` in idle systems; high values (`>4`) indicate CPU contention. | If `r` is consistently high, CPU is overloaded, and processes are waiting for execution. |
+| **procs (b)** | Number of processes blocked (waiting for I/O) | Normally `0`. If `>1`, there may be a disk bottleneck. | High `b` value suggests slow disk I/O or a failing disk. Check with `iostat` or `iotop`. |
+| **swpd** | Swap memory used (KB) | Ideally `0`. If `>0`, swapping is occurring, affecting performance. | High `swpd` suggests memory pressure. Check RAM usage and reduce unnecessary applications. |
+| **free** | Free RAM (KB) | Varies; modern systems keep low free memory since Linux uses RAM for caching. | A sudden drop in `free` memory could indicate a memory leak or a heavy application consuming RAM. |
+| **buff** | Memory used for buffers (KB) | Typically in tens to hundreds of MBs. | Buffers are used for disk operations. A steady decrease might indicate high disk read/write operations. |
+| **cache** | Memory used for caching files (KB) | Normally large; Linux aggressively caches files to speed up access. | If cache suddenly drops, it may indicate high memory demand from running applications. |
+| **si (swap in)** | Swap memory read from disk (KB/s) | Normally `0`. If `>0`, system is swapping in data from disk. | Frequent `si` values mean the system is out of RAM, leading to performance degradation. |
+| **so (swap out)** | Swap memory written to disk (KB/s) | Ideally `0`. If `>0`, system is actively swapping data out. | High `so` values suggest heavy memory pressure. Consider adding more RAM. |
+| **bi (block in)** | Blocks received from a block device (KB/s) | Normally low; spikes indicate disk read activity. | High `bi` suggests disk-intensive tasks like database queries, backups, or file reads. |
+| **bo (block out)** | Blocks sent to a block device (KB/s) | Normally low; spikes indicate disk write activity. | High `bo` suggests disk writes due to logging, file saves, or large writes. |
+| **in** | Interrupts per second | Varies, but typically in the range of `100-1000`. | Very high values (`>2000`) could indicate excessive hardware interrupts from devices like network cards. |
+| **cs** | Context switches per second | Normally `1000-5000` but varies by workload. | Very high `cs` (`>10000`) means excessive task switching, often due to too many small tasks running simultaneously. |
+| **us (user CPU)** | CPU time spent on user processes (%) | `5-50%` under normal loads. | If `us` is consistently high (`>80%`), an application is consuming CPU. Check with `top` or `htop`. |
+| **sy (system CPU)** | CPU time spent on system (kernel) processes (%) | Normally `1-20%`. | High `sy` (`>30%`) suggests kernel-intensive tasks like heavy disk or network activity. |
+| **id (idle CPU)** | Percentage of CPU idle time | Ideally `>70%` in an idle system. | If `id` is low (`<20%`), the system is busy. Investigate high CPU usage processes. |
+| **wa (IO wait CPU)** | CPU waiting for I/O operations to complete (%) | Normally `0-5%`. If `>10%`, there is an I/O bottleneck. | High `wa` suggests slow disk or network storage issues. Check disk health and performance. |
+| **st (steal CPU)** | CPU cycles "stolen" by the hypervisor (only in VMs) (%) | Ideally `0%`. If `>10%`, VM host is overloaded. | High `st` means other VMs are consuming too much CPU. Consider upgrading resources. |
+ 

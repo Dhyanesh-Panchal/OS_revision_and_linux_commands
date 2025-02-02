@@ -106,6 +106,7 @@ tmpfs          tmpfs      2.0M   101  2.0M    1% /run/user/1000
 ### Inode:
 - An inode (index node) is a data structure used by the Linux filesystem to store metadata about a file.
 - Every file in a Linux filesystem has an associated inode, which contains information about the file except for its name and content.
+- Each filesystem mounted to your computer has its own inodes
 - List inode : `ls -i filename`
 
 ### Filesystem based options

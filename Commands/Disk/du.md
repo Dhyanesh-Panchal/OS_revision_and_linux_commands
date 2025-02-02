@@ -44,4 +44,8 @@ dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~$ du -h ~/Desktop/OS_revision/
 .
 .
 ```
-
+- `-s` flag can be used to get the info for the provided dirrctory, Excluding its childs.
+```sh
+dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~$ du -s /home/dhyanesh/Desktop/
+2480	/home/dhyanesh/Desktop/
+```

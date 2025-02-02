@@ -32,6 +32,8 @@
 - `renice` changes the priority of already running process.
 
 ## `jobs`
+- A **process** is an instance of a running program managed by the kernel while, **job** is a shell-specific concept referring to one or more processes grouped together and managed by the shell's job control mechanism (e.g., foreground/background execution, suspending, resuming).
+- If you add an ampersand (`&`) at the end, like `sleep 60 &`, it becomes a background job.
 - It lists all background and suspended jobs in the current shell.
 
 ## `bg [job_id]`
