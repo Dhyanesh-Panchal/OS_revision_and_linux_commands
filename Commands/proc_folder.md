@@ -17,3 +17,5 @@ Eg.
 **Cached**- Cached memory (used but available for reuse)
 **SwapTotal**- Total swap space
 **SwapFree**- Free swap space
+
+## Important Folders

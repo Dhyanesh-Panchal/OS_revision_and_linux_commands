@@ -15,17 +15,17 @@
     dhyanesh    5438    2917  0  2984  6340   0 Jan28 pts/1    00:00:00 bash
     dhyanesh   25367    5438  0  2874  3296   5 16:47 pts/1    00:00:00 ps -F
     ```
-    - *UID*: User identifier - shows which user owns the process (in this case "dhyanesh")
-    - *PID*: Process ID - unique identifier assigned to each process (5438 and 25367 in your output)
-    - *PPID*: Parent Process ID - ID of the process that spawned this process (2917 and 5438 in your output)
-    - *C*: CPU utilization - percentage of CPU usage (both showing 0 in your case)
-    - *SZ*: Size in physical pages - total size of the process in memory pages (2984 and 2874 pages)
-    - *RSS*: Resident Set Size - amount of physical memory (RAM) the process is using in kilobytes (6340KB and 3296KB)
-    - *PSR*: Processor - shows which CPU core the process is running on (0 and 5 in your case)
-    - *STIME*: Start time - when the process began (Jan28 and 16:47)
-    - *TTY*: Terminal type - the terminal the process is running in (pts/1 for both)
-    - *TIME*: CPU time - amount of CPU time the process has used (00:00:00 for both)
-    - *CMD*: Command - the command that started the process (bash and ps -F)
+    - *UID*: User identifier - shows which user owns the process
+    - *PID*: Process ID - unique identifier assigned to each process
+    - *PPID*: Parent Process ID - ID of the process that spawned this process
+    - *C*: CPU utilization - percentage of CPU usage
+    - *SZ*: Size in physical pages - total size of the process in memory pages
+    - *RSS*: Resident Set Size - amount of physical memory (RAM) the process is using in kilobytes
+    - *PSR*: Processor - shows which CPU core the process is running on
+    - *STIME*: Start time - when the process began
+    - *TTY*: Terminal type - the terminal the process is running in
+    - *TIME*: CPU time - amount of CPU time the process has used
+    - *CMD*: Command - the command that started the process
 1. `ps -p <PID>` displays info for specific process.
     - To list any specific information `-o` flag is used.
     ```sh

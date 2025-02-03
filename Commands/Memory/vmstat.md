@@ -46,7 +46,7 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
     ```
     - **disk**: Name of the disk or partition (e.g., `sda`, `sdb1`).
     - **total**: Total number of reads completed successfully.
-    - **merged**: Number of merged reads (grouped for efficiency).
+    - **merged**: Number of merged reads (grouped for efficiency), "merged reads" refers to the total number of disk read requests that were grouped together and combined into a single I/O operation.
     - **sectors**: Total number of sectors read (1 sector = 512 bytes).
     - **ms**: Total time (in milliseconds) spent reading.
     - **total**: Total number of writes completed successfully.

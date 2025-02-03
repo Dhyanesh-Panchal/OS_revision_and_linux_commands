@@ -13,8 +13,6 @@
 ``scp -i /path/to/private_key file.txt user@remote_host:/path/``
 - If the remote has SSH service on different port, use `-P` to specify the SSH port.
 
-### `scp` when connected under VPN.
- 
 
 | Option | Description                                      |
 |--------|--------------------------------------------------|
@@ -25,8 +23,6 @@
 | `-C`   | Enable compression                               |
 | `-q`   | Suppress progress meter and non-error messages   |
 | `-v`   | Enable verbose mode (useful for debugging)       |
-
-### 
 
 
 ## 2. `sftp` Secure File Transfer Protocol
@@ -49,3 +45,44 @@
 | `mkdir <dir>`      | Create a remote directory                        |
 | `rmdir <dir>`      | Remove a remote directory                        |
 | `exit` or `bye`    | Close the SFTP session                           |
+```sh
+hyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~/Desktop/test_go$ sftp maulikpuri@10.20.40.171
+maulikpuri@10.20.40.171's password: 
+Connected to 10.20.40.171.
+sftp> pwd
+Remote working directory: /home/maulikpuri
+sftp> ls
+Desktop                                                Documents                                              Downloads                                              
+Music                                                  Pictures                                               Public                                                 
+Templates                                              Videos                                                 bb.txt                                                 
+clickhouse                                             clickhouse-client-24.12.3.47                           clickhouse-client-24.12.3.47-amd64.tgz                 
+clickhouse-common-static-24.12.3.47                    clickhouse-common-static-24.12.3.47-amd64.tgz          clickhouse-common-static-dbg-24.12.3.47                
+clickhouse-common-static-dbg-24.12.3.47-amd64.tgz      clickhouse-keeper-24.12.3.47-amd64.tgz                 clickhouse-server-24.12.3.47                           
+clickhouse-server-24.12.3.47-amd64.tgz                 hello.txt                                              install_clickhouse.sh                                  
+new.tar                                                sample.txt                                             sample2.txt                                            
+snap                                                   yohooo.txt                                             
+sftp> cd Desktop/
+sftp> ls
+os  
+sftp> put ~/Desktop/sample2.txt
+stat ~/Desktop/sample2.txt: No such file or directory
+sftp> put /home/dhyanesh/Desktop/sample2.txt
+Uploading /home/dhyanesh/Desktop/sample2.txt to /home/maulikpuri/Desktop/sample2.txt
+/home/dhyanesh/Desktop/sample2.txt                                                                                                  100%  180    40.7KB/s   00:00    
+sftp> ls
+os           sample2.txt  
+sftp> get -r os
+Fetching /home/maulikpuri/Desktop/os/ to os
+Retrieving /home/maulikpuri/Desktop/os
+Retrieving /home/maulikpuri/Desktop/os/.git
+Retrieving /home/maulikpuri/Desktop/os/.git/hooks
+/home/maulikpuri/Desktop/os/.git/hooks/applypatch-msg.sample                                                                        100%  478    48.6KB/s   00:00    
+/home/maulikpuri/Desktop/os/.git/hooks/commit-msg.sample                                                                            100%  896    35.8KB/s   00:00    
+/home/maulikpuri/Desktop/os/.git/hooks/update.sample                                                                                100% 3610   332.9KB/s   00:00    
+.
+.
+.
+/home/maulikpuri/Desktop/os/Commands/Memory.md                                                                                      100%   21KB   1.4MB/s   00:00    
+sftp> exit
+exit
+```
