@@ -76,5 +76,4 @@ dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~$  5  120.72.93.121 (120.72.93.121)  8.39
 ``` 
 
 
-
-
+## `chrt` Can be used to change the process scheduling policy.

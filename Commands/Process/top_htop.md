@@ -63,7 +63,7 @@ Type 'q' or <Esc> to continue
   - and restart the process: `sudo kill -1 <ppid>`
 - **Option 2**: Check the status of the parent, if it is not suspended(stopped), then kill the parent process.
 ### Orphaned Processes
-- If the parent dies before the child, the child becomes an orphan and is adopted by the `init` process (PID 1).
+- If the parent dies before the child, the child becomes an orphan and is adopted by the `init` process (ppid=1).
 - The `init` process automatically reaps orphans, so zombies are temporary here.
 
 
