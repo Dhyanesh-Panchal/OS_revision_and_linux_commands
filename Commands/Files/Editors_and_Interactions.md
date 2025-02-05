@@ -33,3 +33,14 @@ set mouse        # Enable mouse support
 | `n`     | Repeat last search in the same direction    |
 | `N`     | Repeat last search in the opposite direction|
 | `q`     | Quit `less`                                 | 
+
+
+#### Options in less:
+| Flag | Description                                                                 |
+|------|-----------------------------------------------------------------------------|
+| `-i` | Case-insensitive search.                                                   |
+| `-p` | Search for and highlight the first occurrence of a pattern immediately upon opening. |
+| `-n` | Show the current line number while scrolling.                               |
+| `-N` | Show line numbers on the left.                                             |
+| `-g` | Skip past all instances of the search pattern.                             |
+| `-s` | Use regular expressions for searches.                                      |

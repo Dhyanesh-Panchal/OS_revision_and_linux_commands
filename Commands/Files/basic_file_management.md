@@ -19,3 +19,47 @@
 The `find` command in Linux is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, type, modification time, and permissions.
 Syntax: `find [path] [expression]`
 
+| Expression               | Description                                      |
+|--------------------------|--------------------------------------------------|
+| `-name "file"`           | Find file by exact name                          |
+| `-iname "file"`          | Case-insensitive search                          |
+| `-type f`                | Find regular files                               |
+| `-type d`                | Find directories                                 |
+| `-size +10M`             | Find files larger than 10MB                      |
+| `-size -1k`              | Find files smaller than 1KB                      |
+| `-mtime -7`              | Files modified in the last 7 days                |
+| `-perm 777`              | Files with full permissions                      |
+| `-user john`             | Files owned by user `john`                       |
+| `-group developers`      | Files owned by group `developers`                |
+| `-exec command {} \;`    | Execute command on found files                   |
+
+## `lsof` List Open Files
+- It is used to display information about open files and the processes using them. 
+- **Since everything in Linux is treated as a file, lsof can monitor open files, network sockets, directories, and devices.**
+#### Syntax `lsof [options] [file|directory|process ID]`
+
+| Flag      | Description                                           | Example Usage                     |
+|-----------|-------------------------------------------------------|-----------------------------------|
+| `-u`      | Show open files for a specific user                   | `lsof -u user1`                   |
+| `-p`      | List files opened by a specific process ID            | `lsof -p 1234`                    |
+| `-c`      | Show open files for processes matching a command name | `lsof -c apache`                  |
+| `-d`      | Show files opened with a specific file descriptor     | `lsof -d 2` (stderr)              |
+| `-t`      | Display only process IDs of processes with open files | `lsof -t /var/log/syslog`         |
+| `-i`      | List open network connections                         | `lsof -i`                         |
+| `-i :port`| Show processes using a specific network port          | `lsof -i :80`                     |
+| `-i TCP/UDP` | Show TCP or UDP connections                        | `lsof -i TCP` or `lsof -i UDP`    |
+| `-n`      | Prevent DNS lookup for faster output                  | `lsof -n -i`                      |
+| `+D`      | Recursively list all open files in a directory        | `lsof +D /var/log/`               |
+| `+L`      | List open files with links count less than specified  | `lsof +L1` (deleted files)        |
+| `-r`      | Repeat the listing every N seconds                    | `lsof -r 5`                       |
+| `-X`      | Prevent reporting of TCP, UDP, and IPv4/IPv6 files    | `lsof -X`                         |
+
+- **COMMAND**: Name of the process
+- **PID**: Process ID
+- **USER**: Owner of the process
+- **FD**: File descriptor (e.g., cwd, txt, mem, 1w for stdout)
+- **TYPE**: Type of file (e.g., REG, DIR, CHR, FIFO, IPv4)
+- **DEVICE**: Device identifier
+- **SIZE/OFF**: File size or offset
+- **NODE**: Node number (inode)
+- **NAME**: File path or socket information

@@ -34,7 +34,7 @@ nvme0n1     259:0    0 238.5G  0 disk
 
 ### Field Descriptions
 - **NAME**: The name of the device or partition (e.g., `sda`, `sda1`, `sdb`). It represents the device identifier used by the system.
-- **MAJ:MIN**: The major and minor device numbers, used to identify the device in the kernel.
+- **MAJ:MIN**: The major and minor device numbers, used to identify the device in the kernel. **Each major number corresponds to a specific driver, which can handle multiple devices distinguished by minor numbers.** 
 - **RM**: A flag indicating whether the device is removable. `1` for removable devices (e.g., USB drives), `0` for non-removable devices (e.g., internal HDD).
 - **SIZE**: The size of the device or partition. For partitions, this is the size of the partition; for disks, it's the size of the entire disk.
 - **RO**: Indicates if the device is read-only. `1` means the device is read-only (cannot write to it), `0` means it is writable.

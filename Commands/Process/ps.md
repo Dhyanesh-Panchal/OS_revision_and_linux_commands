@@ -218,6 +218,7 @@ Use `ps [options] --sort [+|-]key[,]` to sort results:
 ![pstree](../../Images/pstree.png)
 
 - `-p` flag can be used to display processIds.
+- `pstree <PID>` can be used to display tree for specific PID.
 
 
 #### `pgrep <process_name>` Finds and lists PIDs of processes matching a given name.
