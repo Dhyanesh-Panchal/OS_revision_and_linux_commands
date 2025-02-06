@@ -20,4 +20,6 @@
     - BIOS loads the first sector (512 bytes) of the disk (MBR - Master Boot Record) into RAM.
     - BIOS passes control to the bootloader (located in the MBR or EFI partition).
     - The bootloader is responsible for loading the operating system.
+5. **Kernel Load**: The Bootloader loads the OS kernel.
 
+6. **Kernel executes `systemd`** and system service starts.
