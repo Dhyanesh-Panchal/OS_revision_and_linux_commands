@@ -112,6 +112,10 @@ Type 'q' or <Esc> to continue
 
 - Use `-d` to change update frequency, default-3 sec.
 
+### Irix Mode (Shift + I)
+- When Irix mode is ON, the CPU utilization is sum-up of %usage of all individual core. this can exceed 100%
+- While, Irix mode is OFF, the total utilization is divided by no. of cores and average utilization is displayed. this ranges between 0-100%.
+
 ## htop Command
 ![htop](../../Images/htop.png)
 

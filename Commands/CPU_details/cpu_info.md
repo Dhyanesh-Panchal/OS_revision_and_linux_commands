@@ -52,7 +52,12 @@ Flags:                                fpu vme de pse tsc msr pae mce cx8 apic se
                                       es
 dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~/Desktop/test_go$ 
 ```
-
+- **NUMA-Node(s)**: NUMA (Non-Uniform Memory Access) is a computer memory design used in multiprocessing systems where memory access time depends on the memory location relative to the processor. So, NUMA node(s): 1 means there is only one memory node, so memory access is uniform across all CPUs (not NUMA in this case).
+- **BogoMIPS**: BogoMIPS is a simple, crude measurement of CPU speed which is calculated during Linux Kernel Boot.
+- **L1d cache**: Level 1 data cache. Stores data for quick access by the CPU. Size: 128 KiB.
+- **L1i cache**: Level 1 instruction cache. Stores instructions for quick access by the CPU. Size: 128 KiB.
+- **L2 cache**: Level 2 cache. Larger than L1 but slower. Stores both data and instructions. Size: 1 MiB.
+- **L3 cache**: Level 3 cache. Shared among all CPU cores. Larger but slower than L2. Size: 8 MiB.
 
 ## `dmidecode -t processor` – Fetch CPU details from BIOS.
 
