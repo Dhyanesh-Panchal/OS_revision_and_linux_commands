@@ -23,3 +23,5 @@
 5. **Kernel Load**: The Bootloader loads the OS kernel.
 
 6. **Kernel executes `systemd`** and system service starts.
+
+[Reference](https://youtu.be/XpFsMB6FoOs?si=bQVk4iPIz2Kyo3cW)
