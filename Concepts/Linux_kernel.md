@@ -1,11 +1,14 @@
 # Kernel of Linux
+Linux is a monolithic kernel but with modular capabilities. While it follows the monolithic kernel architecture, it also supports **loadable kernel modules (LKMs)**, making it a modular kernel in practice.
+- A loadable kernel module (LKM) is an executable library that extends the capabilities of a running kernel, or so-called base kernel, of an operating system.
+- The modular approach allows users to extend the kernel without modifying or recompiling the core.
+
 
 ## Overview of User space and Kernel space
 - In an operating system, there are two primary spaces where code can execute: user space and kernel space. User space is where user applications execute, while kernel space is where the operating system itself and other privileged components execute.
 - In kernel space, code has direct access to system resources like memory and hardware, enabling privileged operations not available in user space.
 - System calls are used by the userspace processes to access the priviledged resources.
 
-## How linux Implements user-kernel space, while having monolithic kernel.
 
 ### Memory Space Separation
 Linux uses virtual memory management and processor protection rings to create a strict separation:
