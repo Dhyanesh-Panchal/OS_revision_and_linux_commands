@@ -7,7 +7,7 @@
 ## Booting Sequence:
 1. **Power on**
 2. **Power on Self test (POST)**: POST is a set of routine performed by firmware immediately after the boot.
-    - POST sequence is executed irrespective of the Operating System and is handled by the system BIOS. Once the tests are passed the POST would generally notify the OS with beeps while the number of beeps can vary from system to system.
+    - POST sequence is executed irrespective of the Operating System and is handled by the system BIOS/UEFI. Once the tests are passed the POST would generally notify the OS with beeps while the number of beeps can vary from system to system.
     - The checks are performed majorly on:
         - Hardware elements like processor, storage devices and memory.
         - Basic System Devices like keyboard, and other peripheral devices.
@@ -16,10 +16,11 @@
         - Timer
         - Interrupt controller
 3. **Look for a Boot device**: The BIOS searches for bootable device based on the boot priority order. The first device with the valid **boot sector** is selected.
-4. **boot loader**: Loading the Bootloader. If the selected boot device has a valid boot sector:
+4. **Boot loader**: Loading the Bootloader. If the selected boot device has a valid boot sector:
     - BIOS loads the first sector (512 bytes) of the disk (MBR - Master Boot Record) into RAM.
     - BIOS passes control to the bootloader (located in the MBR or EFI partition).
     - The bootloader is responsible for loading the operating system.
+    - Linux systems uses `GRUB` while macs uses `boot.efi`. 
 5. **Kernel Load**: The Bootloader loads the OS kernel.
 
 6. **Kernel executes `systemd`** and system service starts.
