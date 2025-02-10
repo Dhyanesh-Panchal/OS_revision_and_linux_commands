@@ -1,4 +1,5 @@
 # `sar` System Activity Report
+- `sar` is a part of `sysstat` package and it needs data collection to be enabled. 
 - The `sar` command is used to collect, report, and save system activity information. It can report CPU utilization, memory usage, I/O activity, and much more over time.
 
 | Flag     | Description                                                                 |

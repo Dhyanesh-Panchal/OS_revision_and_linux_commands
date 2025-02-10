@@ -124,6 +124,13 @@ Use `ps [options] --sort [+|-]key[,]` to sort results:
 
 - `-p` flag can be used to display processIds.
 - `pstree <PID>` can be used to display tree for specific PID.
+#### Output Directive for pstree.
+
+  | Symbol | Meaning |
+  |--------|---------|
+  | 2*[process] | There are two instances of this process |
+  | {process} | Indicates kernel threads within a process |
+  | N*[{process}] | The process has N kernel threads |
 
 
 #### `pgrep <process_name>` Finds and lists PIDs of processes matching a given name.

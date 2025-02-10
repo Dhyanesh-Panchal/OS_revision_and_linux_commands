@@ -28,6 +28,7 @@ Syntax: `find [path] [expression]`
 | `-size +10M`             | Find files larger than 10MB                      |
 | `-size -1k`              | Find files smaller than 1KB                      |
 | `-mtime -7`              | Files modified in the last 7 days                |
+| `-mmin -7`              | Files modified in the last 7 minutes                |
 | `-perm 777`              | Files with full permissions                      |
 | `-user john`             | Files owned by user `john`                       |
 | `-group developers`      | Files owned by group `developers`                |
