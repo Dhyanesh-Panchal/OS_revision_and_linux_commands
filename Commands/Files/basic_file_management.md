@@ -12,8 +12,6 @@
 | `cp`     | Copy files or directories. | `cp file.txt /backup/` |
 | `mv`     | Move or rename files and directories. | `mv old.txt new.txt` (Rename file) |
 | `find`   | Search for files and directories. | `find / -name "*.log"` (Find all `.log` files) |
-| `tree`   | Display directory structure in a tree-like format. | `tree /home/user` |
-
 
 ## `find`
 The `find` command in Linux is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, type, modification time, and permissions.
@@ -34,6 +32,7 @@ Syntax: `find [path] [expression]`
 | `-group developers`      | Files owned by group `developers`                |
 | `-exec command {} \;`    | Execute command on found files                   |
 
+![find](../../Images/find.png)
 ## `lsof` List Open Files
 - It is used to display information about open files and the processes using them. 
 - **Since everything in Linux is treated as a file, lsof can monitor open files, network sockets, directories, and devices.**
@@ -54,6 +53,32 @@ Syntax: `find [path] [expression]`
 | `+L`      | List open files with links count less than specified  | `lsof +L1` (deleted files)        |
 | `-r`      | Repeat the listing every N seconds                    | `lsof -r 5`                       |
 | `-X`      | Prevent reporting of TCP, UDP, and IPv4/IPv6 files    | `lsof -X`                         |
+
+#### Example output
+```sh
+dhyanesh@dhyanesh-ThinkPad-T14s-Gen-1:~/Desktop$ sudo lsof -p 1467
+[sudo] password for dhyanesh: 
+Sorry, try again.
+[sudo] password for dhyanesh: 
+lsof: WARNING: can't stat() fuse.gvfsd-fuse file system /run/user/1000/gvfs
+      Output information may be incomplete.
+lsof: WARNING: can't stat() fuse file system /run/user/1000/doc
+      Output information may be incomplete.
+COMMAND    PID       USER   FD      TYPE             DEVICE   SIZE/OFF       NODE NAME
+clickhous 1467 clickhouse  cwd       DIR              259,2       4096          2 /
+clickhous 1467 clickhouse  rtd       DIR              259,2       4096          2 /
+clickhous 1467 clickhouse  txt       REG              259,2  544518752    7995512 /usr/bin/clickhouse
+clickhous 1467 clickhouse  mem       REG              259,2 1919097960    8273449 /usr/lib/debug/usr/bin/clickhouse.debug
+clickhous 1467 clickhouse  mem       REG              259,2    5699248    7995509 /usr/lib/locale/locale-archive
+clickhous 1467 clickhouse  DEL       REG              259,2               7997647 /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+clickhous 1467 clickhouse  DEL       REG              259,2               7997608 /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+clickhous 1467 clickhouse  DEL       REG              259,2               7997612 /usr/lib/x86_64-linux-gnu/libm-2.31.so
+clickhous 1467 clickhouse  DEL       REG              259,2               7997604 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+clickhous 1467 clickhouse  DEL       REG              259,2               7997666 /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+clickhous 1467 clickhouse  DEL       REG              259,2               7997675 /usr/lib/x86_64-linux-gnu/librt-2.31.so
+...
+```
+
 
 - **COMMAND**: Name of the process
 - **PID**: Process ID
