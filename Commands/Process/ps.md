@@ -1,6 +1,5 @@
-# `ps` (Process Status) Command
 
-The `ps` command is used to display information about active processes. Unlike `top`, which provides real-time monitoring, `ps` shows a snapshot of processes at the moment it is executed.
+# ps Command Notes
 
 ## Basic Usage
 
@@ -26,17 +25,19 @@ dhyanesh   25367    5438  0  2874  3296   5 16:47 pts/1    00:00:00 ps -F
 ```
 
 #### Field Descriptions
-- **UID**: User identifier - shows which user owns the process
-- **PID**: Process ID - unique identifier assigned to each process
-- **PPID**: Parent Process ID - ID of the process that spawned this process
-- **C**: CPU utilization - percentage of CPU usage
-- **SZ**: Size in physical pages - total size of the process in memory pages
-- **RSS**: Resident Set Size - amount of physical memory (RAM) the process is using in kilobytes
-- **PSR**: Processor - shows which CPU core the process is running on
-- **STIME**: Start time - when the process began
-- **TTY**: Terminal type - the terminal the process is running in
-- **TIME**: CPU time - amount of CPU time the process has used
-- **CMD**: Command - the command that started the process
+| Field   | Description |
+|---------|-------------|
+| **UID** | User identifier - shows which user owns the process |
+| **PID** | Process ID - unique identifier assigned to each process |
+| **PPID** | Parent Process ID - ID of the process that spawned this process |
+| **C** | CPU utilization - percentage of CPU usage |
+| **SZ** | Size in physical pages - total size of the process in memory pages |
+| **RSS** | Resident Set Size - amount of physical memory (RAM) the process is using in kilobytes |
+| **PSR** | Processor - shows which CPU core the process is running on |
+| **STIME** | Start time - when the process began |
+| **TTY** | Terminal type - the terminal the process is running in |
+| **TIME** | CPU time - amount of CPU time the process has used |
+| **CMD** | Command - the command that started the process |
 
 ## Common Options
 
@@ -67,24 +68,28 @@ root           8  0.0  0.0      0     0 ?        I<   Jan28   0:00 [kworker/0:0H
 ```
 
 ### Process States (STAT column)
-- **R**: Running or runnable
-- **S**: Sleeping (interruptible)
-- **D**: Uninterruptible sleep
-- **Z**: Zombie
-- **T**: Stopped/traced
-- **+**: In foreground process group
-- **s**: Session leader
-- **l**: Multi-threaded
-- **<**: High priority
-- **N**: Low priority
+| State | Description |
+|-------|-------------|
+| **R** | Running or runnable |
+| **S** | Sleeping (interruptible) |
+| **D** | Uninterruptible sleep |
+| **Z** | Zombie |
+| **T** | Stopped/traced |
+| **+** | In foreground process group |
+| **s** | Session leader |
+| **l** | Multi-threaded |
+| **<** | High priority |
+| **N** | Low priority |
 
 ### Long Format
 `ps -l` shows process in long format with additional fields:
-- **PRI**: Process scheduling priority
-- **NI**: Nice value (-20 to +19)
-- **ADDR**: Memory address (segment number if not 0)
-- **SZ**: Core image size (in pages)
-- **WCHAN**: Name of CPU wait channel
+| Field  | Description |
+|--------|-------------|
+| **PRI** | Process scheduling priority |
+| **NI** | Nice value (-20 to +19) |
+| **ADDR** | Memory address (segment number if not 0) |
+| **SZ** | Core image size (in pages) |
+| **WCHAN** | Name of CPU wait channel |
 
 ### Custom Output
 Using `-o` flag for specific information:
@@ -100,23 +105,23 @@ Use `ps [options] --sort [+|-]key[,]` to sort results:
 - `ps aux --sort=+pcpu`: Sort by CPU usage (ascending)
 
 ### Common Sort Keys
-- **pcpu**: CPU usage
-- **pmem**: Memory usage
-- **pid**: Process ID
-- **comm**: Command name
-- **start_time**: Process start time
-- **rss**: Resident Set Size
-- **vsz**: Virtual memory size
-- **tty**: Terminal name
-- **user**: Username
+| Key       | Description |
+|-----------|-------------|
+| **pcpu**  | CPU usage |
+| **pmem**  | Memory usage |
+| **pid**   | Process ID |
+| **comm**  | Command name |
+| **start_time** | Process start time |
+| **rss**   | Resident Set Size |
+| **vsz**   | Virtual memory size |
+| **tty**   | Terminal name |
+| **user**  | Username |
 
-## Using selectors with ps
+## Using Selectors with `ps`
 - Use `ps aux | grep [process_name/keyword]` to find specific processes or filter using keyword.
 - Combine with `watch` command for periodic updates: `watch ps aux`
 - Use `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head` to see top memory-consuming processes
 - `awk` can also be used to search based on pattern.
-
-
 ## Other Commands related to process
 
 #### `pstree`-Displays processes in a hierarchical tree format.
