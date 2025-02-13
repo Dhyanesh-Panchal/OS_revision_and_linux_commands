@@ -8,4 +8,5 @@
     - On Linux, archive libraries end with the `.a` extension, and shared object libraries end with the `.so` extension.
     - For more details: [here](./shared_objects.md)
 
-    
+
+- > The `/etc/fstab` file contains information about filesystems that are typically mounted at boot time.

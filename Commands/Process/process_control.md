@@ -13,6 +13,8 @@
 | `SIGSTOP`  | 19     | Pause the process (like Ctrl+Z)                  |
 | `SIGCONT`  | 18     | Continue a stopped process                       |
 
+- There are **total 64 types of such Interrupts**.
+- use `kill -l` to list all the interrupts.
 
 ## `killall [options] process_name`
 - The `killall` command is similar to `kill`, but instead of specifying a process ID (PID), you provide the process name. It is useful when you want to terminate all instances of a particular program.

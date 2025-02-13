@@ -76,7 +76,7 @@ clickhous 1467 clickhouse  DEL       REG              259,2               799761
 clickhous 1467 clickhouse  DEL       REG              259,2               7997604 /usr/lib/x86_64-linux-gnu/libc-2.31.so
 clickhous 1467 clickhouse  DEL       REG              259,2               7997666 /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
 clickhous 1467 clickhouse  DEL       REG              259,2               7997675 /usr/lib/x86_64-linux-gnu/librt-2.31.so
-...
+....
 ```
 
 

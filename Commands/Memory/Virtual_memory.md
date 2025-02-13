@@ -32,21 +32,4 @@ address                 perms   offset    dev     inode                   pathna
 - **pathname**: If the region was mapped from a file, this is the name of the file. There are also special regions with names like `[heap]`, `[stack]`, or `[vdso]`.
 
 
-## `pmap` process mapped files.
-- Its is used to report memory usage by a particular process.
-- Syntax: `pmap [option] <PID>`
-
-| Option | Description                                                                 |
-|--------|-----------------------------------------------------------------------------|
-| `-x`   | Extended details with permissions and offset.                               |
-| `-X`   | Similar to `-x` but with more information about path mappings.              |
-| `-A`   | Show addresses of memory segments.                                          |
-| `-d`   | Show device details of mappings.                                            |
-| `-q`   | Quiet mode (hides header and footer).                                       |
-| `-p`   | Show memory mappings of multiple processes (requires root).                 |
-| `-n`   | Do not display headers.                                                     |
-| `-s`   | Show summary of memory usage.                                               |
-| `-c`   | Display a count of memory mappings.                                         |
-| `-V`   | Show version info.                                                          |
-
 - Irix Mode is typically **enabled by default**.
