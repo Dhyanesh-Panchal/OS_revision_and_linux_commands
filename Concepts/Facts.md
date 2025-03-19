@@ -10,3 +10,6 @@
 
 
 - > The `/etc/fstab` file contains information about filesystems that are typically mounted at boot time.
+
+
+- [Loadable Kernel Modules](https://docs.legato.io/latest/getStartedKO.html) (.ko files) are object files that are used to extend the kernel of the Linux Distribution.

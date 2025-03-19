@@ -2,6 +2,7 @@
 
 - `grep` is used to search for patterns in files. It supports basic regular expressions.
 - Syntax: `grep [OPTIONS] PATTERN [FILE...]`
+
 | Option | Description                                      |
 |--------|--------------------------------------------------|
 | `-i`   | Ignore case distinctions                         |
