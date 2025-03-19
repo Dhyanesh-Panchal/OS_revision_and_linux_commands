@@ -2,6 +2,7 @@
 - The lscpu command in Linux is used to display detailed information about the CPU architecture, including the number of cores, threads, cache sizes, and CPU model.
 - It gathers this information from `/proc/cpuinfo` and other system sources.
 - Syntax: `lscpu [options]`
+
 | Option                  | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
 | `-a`, `--all`           | Display information about all CPUs, including offline ones.                 |
